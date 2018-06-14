@@ -1,0 +1,16 @@
+.login-page{
+	margin: 20px auto; 
+	text-align: center;
+}
+
+.login-page .label{
+	margin: 10px 0;
+}
+
+
+.login-page form{
+	text-align: left;
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
