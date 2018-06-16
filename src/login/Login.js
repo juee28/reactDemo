@@ -12,13 +12,10 @@ class Login extends Component {
       state: '',
       phone: ''
     };
-
+     
+console.log(this.option)
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  option(){
-
   }
 
   handleChange(event) {
@@ -27,35 +24,45 @@ class Login extends Component {
 
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    console.log(this.state);
     event.preventDefault();
   }
 
 
   render() {
+    var option = this.props.states.map((sta)=> {
+        return (
+          <option value={sta.name} key={sta.id}>{sta.name}</option>
+          )
+      });  
+
     return (
       <div className="Login">
         <div className='login-page'>
           <form onSubmit={this.handleSubmit}>
             <div className="label">
               <label>Email: </label>
-              <input type="email" name="email" value={this.state.email} onChange={this.handleChange} className="form-control"/>
+              <input type="email" name="email" placeholder="Enter email" value={this.state.email} onChange={this.handleChange} className="form-control"/>
             </div>
             <div className="label">
               <label>Password: </label>
-              <input type="password" name="password" value={this.state.password} onChange={this.handleChange} className="form-control"/>
+              <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} className="form-control"/>
             </div>
             <div className="label">
               <label>Name: </label>
-              <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className="form-control"/>
+              <input type="text" name="name" placeholder="Enter name" value={this.state.name} onChange={this.handleChange} className="form-control"/>
             </div>
             <div className="label">
               <label>State: </label>
-              <input type="text" name="state" value={this.state.state} onChange={this.handleChange} className="form-control"/>
+              <select className="form-control" name="state" value={this.state.state} onChange={this.handleChange} >
+                <option value='' disabled>Select state</option>
+                {option}
+              </select>
+              
             </div>
             <div className="label">
               <label>Phone: </label>
-              <input type="phone" name="phone" value={this.state.phone} onChange={this.handleChange} className="form-control"/>
+              <input type="phone" name="phone" placeholder="Enter phone no" value={this.state.phone} onChange={this.handleChange} className="form-control"/>
             </div>
              <input type="submit" value="Submit" className="btn btn-primary"/>
           </form>
