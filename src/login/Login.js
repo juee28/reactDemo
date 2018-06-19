@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Login.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Welcome from '../welcome/Welcome';
+
 class Login extends Component {
 
   constructor(props) {
@@ -13,23 +16,19 @@ class Login extends Component {
       phone: ''
     };
      
-console.log(this.option)
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({[event.target.name]: event.target.value});
   }
 
-
   handleSubmit(event) {
-    console.log(this.state);
+    this.context.router.transitionTo('/Home');
     event.preventDefault();
   }
 
-
   render() {
+ 
     var option = this.props.states.map((sta)=> {
         return (
           <option value={sta.name} key={sta.id}>{sta.name}</option>
@@ -39,32 +38,31 @@ console.log(this.option)
     return (
       <div className="Login">
         <div className='login-page'>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <div className="label">
               <label>Email: </label>
-              <input type="email" name="email" placeholder="Enter email" value={this.state.email} onChange={this.handleChange} className="form-control"/>
+              <input type="email" name="email" placeholder="Enter email" value={this.state.email} onChange={(e) => this.handleChange(e)} className="form-control"/>
             </div>
             <div className="label">
               <label>Password: </label>
-              <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} className="form-control"/>
+              <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={(e) => this.handleChange(e)} className="form-control"/>
             </div>
             <div className="label">
               <label>Name: </label>
-              <input type="text" name="name" placeholder="Enter name" value={this.state.name} onChange={this.handleChange} className="form-control"/>
+              <input type="text" name="name" placeholder="Enter name" value={this.state.name} onChange={(e) => this.handleChange(e)} className="form-control"/>
             </div>
             <div className="label">
               <label>State: </label>
-              <select className="form-control" name="state" value={this.state.state} onChange={this.handleChange} >
+              <select className="form-control" name="state" value={this.state.state} onChange={(e) => this.handleChange(e)} >
                 <option value='' disabled>Select state</option>
                 {option}
               </select>
-              
             </div>
             <div className="label">
               <label>Phone: </label>
-              <input type="phone" name="phone" placeholder="Enter phone no" value={this.state.phone} onChange={this.handleChange} className="form-control"/>
+              <input type="phone" name="phone" placeholder="Enter phone no" value={this.state.phone} onChange={(e) => this.handleChange(e)} className="form-control"/>
             </div>
-             <input type="submit" value="Submit" className="btn btn-primary"/>
+             <Link to={{ pathname: '/Home', user: this.state }}className="btn btn-primary">Submit</Link>
           </form>
         </div>
       </div>

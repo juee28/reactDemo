@@ -1,0 +1,23 @@
+.user-name{
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.app{
+
+    width: 200px;
+    margin: 50px auto;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid #61DAFB;
+    transition: 1s all;
+}
+
+.app:hover{
+	background: #61DAFB;
+
+}
+
+.app p{
+	padding: 37px 0;
+}
