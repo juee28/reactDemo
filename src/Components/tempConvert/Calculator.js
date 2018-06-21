@@ -40,17 +40,21 @@ class Calculator extends Component {
         const fahrenheit = scale === 'c' ? this.tryConvert(temperature, this.toFahrenheit) : temperature;
 
         return (
-            <div className="Box text-left">
-                <TempConvert
-                    scale="c"
-                    temperature={celsius}
-                    onTemperatureChange={(e) => this.handleCelsiusChange(e)} />
-                <TempConvert
-                    scale="f"
-                    temperature={fahrenheit}
-                    onTemperatureChange={(e) => this.handleFahrenheitChange(e)} />
-                <BoilingVerdict
-                    celsius={parseFloat(celsius)} />
+            <div className="text-left">
+                <br />
+                <h4 className="text-center">TempConvert</h4>
+                <div className="Box">
+                    <TempConvert
+                        scale="c"
+                        temperature={celsius}
+                        onTemperatureChange={(e) => this.handleCelsiusChange(e)} />
+                    <TempConvert
+                        scale="f"
+                        temperature={fahrenheit}
+                        onTemperatureChange={(e) => this.handleFahrenheitChange(e)} />
+                    <BoilingVerdict
+                        celsius={parseFloat(celsius)} />
+                </div>
             </div>
         );
     }
