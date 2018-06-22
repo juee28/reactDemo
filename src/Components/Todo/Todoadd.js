@@ -7,8 +7,6 @@ class Todoadd extends Component {
         super(props);
        
     }
-    componentDidMount() {
-    }
     
     render() {
         return (

@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import './Category.css';
 
 class Category extends Component {
-
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const category = [
 			{ id: 1, name: "Home" },
@@ -62,11 +57,13 @@ function ProductList(props) {
 function CategoryList(props) {
 	const category = props.category;
 	const product = props.product;
-	const listItems = category.map((category) =>
-		<li key={category.id}>
+	const listItems = category.map((category) => {
+		return (<li key={category.id}>
 			<div className="rows">{category.name}</div>
 			<ProductList product={product} catId={category.id} />
-		</li>
+		</li>)
+	}
+
 	);
 	return (
 		<ul className="listnone">{listItems}</ul>
