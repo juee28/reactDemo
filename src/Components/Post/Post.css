@@ -1,0 +1,33 @@
+.post-container{
+    padding: 10px;
+    border: 1px solid #ddd;
+    height: 100px;
+    vertical-align: middle;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.margin0{
+    margin: 0;
+}
+
+.DetailPost, .NewPost {
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.red{
+    color: red;
+}
+
+
+form.form{
+	text-align: left;
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+.Post{
+    margin: 20px 0;
+}

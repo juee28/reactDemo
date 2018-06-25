@@ -3,11 +3,6 @@
 import React, {Component} from 'react';
 
 class Todoadd extends Component {
-    constructor(props) {
-        super(props);
-       
-    }
-    
     render() {
         return (
             <div className="form-group">

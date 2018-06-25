@@ -8,6 +8,8 @@ import Welcome from './Components/welcome/Welcome';
 import Category from './Components/category/Category';
 import Calculator from './Components/tempConvert/Calculator';
 import Todo from './Components/Todo/Todo';
+import Post from './Components/Post/Post';
+
 class App extends Component {
 
 	render() {
@@ -32,6 +34,7 @@ class App extends Component {
 					<Route path='/Category' component={Category} />
 					<Route path='/TempConvert' component={Calculator} />
 					<Route path='/Todo' component={Todo} />
+					<Route path='/Post' component={Post} />
 				</Switch>
 			</div>
 		);

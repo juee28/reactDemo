@@ -29,6 +29,13 @@ const Welcome = (props) => {
             </Link>
           </div>
         </div>
+        <div className="col-md-2">
+          <div className="app">
+            <Link to='/Post'>
+              <p>Post</p>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

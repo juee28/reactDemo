@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import './Category.css';
+// import API from '../../Api';
+
 
 class Category extends Component {
+
+	// componentDidMount() {
+	// 	API.get('CinemaOperator')
+	// 		.then(res => {
+	// 			const persons = res.data;
+	// 		})
+	// }
+
 	render() {
 		const category = [
 			{ id: 1, name: "Home" },
@@ -37,8 +47,8 @@ function ProductList(props) {
 	const product = props.product;
 	const catId = props.catId;
 	const listItems = product.map((product) => {
-		if (product.catId == catId) {
-			return (<li key={product.id}>
+		if (product.catId === catId) {
+			return	( <li key={product.id}>
 				{product.name}
 			</li>)
 		}

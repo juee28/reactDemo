@@ -6,10 +6,6 @@ const scaleNames = {
 };
 
 class TempConvert extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	handleChange(e) {
 		this.props.onTemperatureChange(e.target.value);
 	}
