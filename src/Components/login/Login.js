@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import './Login.css';
 
 class Login extends Component {
@@ -47,6 +46,10 @@ class Login extends Component {
 			submit: false
 		};
 
+	}
+	
+	componentDidMount(){
+		console.log(this.props)
 	}
 
 	handleChange(event) {
@@ -109,7 +112,16 @@ class Login extends Component {
 	}
 
 	render() {
-		var option = this.props.states.map((sta) => {
+		const states = [
+			{ id: 1, name: "Gujarat" },
+			{ id: 2, name: "Maharashtra" },
+			{ id: 3, name: "Kerala" },
+			{ id: 4, name: "Uttar Pradesh" },
+			{ id: 5, name: "Delhi" },
+			{ id: 6, name: "Punjab" },
+			{ id: 7, name: "Rajasthan" }
+		]
+		var option = states.map((sta) => {
 			return (
 				<option value={sta.name} key={sta.id}>{sta.name}</option>
 			)
@@ -120,19 +132,19 @@ class Login extends Component {
 				<div className='login-page'>
 					<form>
 						<div className="label">
-							<label>Email: </label>
+							<label>Email: <span className="red">*</span></label>
 							<input type="email" name="email" placeholder="Enter email" value={this.state.user.email.value}
 								onChange={(e) => this.handleChange(e)}
 								className={this.state.user.email.isValid ? 'form-control' : 'invalid form-control'} />
 						</div>
 						<div className="label">
-							<label>Password: </label>
+							<label>Password: <span className="red">*</span></label>
 							<input type="password" name="password" placeholder="Enter password" value={this.state.user.password.value}
 								onChange={(e) => this.handleChange(e)}
 								className={this.state.user.password.isValid ? 'form-control' : 'invalid form-control'} />
 						</div>
 						<div className="label">
-							<label>Name: </label>
+							<label>Name: <span  className="red">*</span></label>
 							<input type="text" name="name" placeholder="Enter name" value={this.state.user.name.value}
 								onChange={(e) => this.handleChange(e)}
 								className={this.state.user.name.isValid ? 'form-control' : 'invalid form-control'} />
@@ -146,7 +158,7 @@ class Login extends Component {
 							</select>
 						</div>
 						<div className="label">
-							<label>Phone: </label>
+							<label>Phone: <span className="red">*</span></label>
 							<input type="phone" name="phone" placeholder="Enter phone no" value={this.state.user.phone.value}
 								onChange={(e) => this.handleChange(e)}
 								className={this.state.user.phone.isValid ? 'form-control' : 'invalid form-control'} />
@@ -159,5 +171,5 @@ class Login extends Component {
 	}
 }
 
-export default withRouter(Login);
+export default (Login);
 

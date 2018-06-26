@@ -9,6 +9,7 @@ import Category from './Components/category/Category';
 import Calculator from './Components/tempConvert/Calculator';
 import Todo from './Components/Todo/Todo';
 import Post from './Components/Post/Post';
+import Counter from './Components/counter/Counter';
 
 class App extends Component {
 
@@ -27,14 +28,16 @@ class App extends Component {
 			<div className="App">
 				<Header />
 				<Switch >
-					<Route exact path='/' render={() => (
-						<Login states={states} />
+					<Route exact path='/'  render={(props) => (
+						<Login  {...props}/>
 					)} />
+					{/* <Route path='/' component={Login} /> */}
 					<Route path='/Home' component={Welcome} />
 					<Route path='/Category' component={Category} />
 					<Route path='/TempConvert' component={Calculator} />
 					<Route path='/Todo' component={Todo} />
 					<Route path='/Post' component={Post} />
+					<Route path='/Counter' component={Counter} />
 				</Switch>
 			</div>
 		);

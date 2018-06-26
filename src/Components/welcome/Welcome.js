@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Welcome.css'
 
 const Welcome = (props) => {
+  console.log(props)
   const name = props.location.user ? props.location.user.name.value : '';
   return (
     <div className="Welcome">
