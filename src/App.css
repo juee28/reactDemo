@@ -10,6 +10,23 @@
 .listnone{
 	list-style: none;
 }
+
 .margin-10{
 	margin-right: 10px
+}
+
+.red{
+	color: red
+}
+
+.margin0{
+	margin: 0;
+
+}
+
+.bold{
+	font-weight: bold;
+}
+.title{
+	margin: 15px 0;
 }

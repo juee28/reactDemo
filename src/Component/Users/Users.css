@@ -1,0 +1,29 @@
+.user,.userdetail {
+	text-align: left;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+	box-shadow: 0px 3px 2px #e8e8e89c;
+	cursor: pointer;
+}
+
+.userdetail{
+	margin: 10px
+}
+
+.user:hover{
+	background: #eee;
+}
+
+.detail{
+	font-size: 14px
+}
+
+.userdetail{
+	cursor: default;
+	width: 50%;
+	margin: 10px auto;
+	border: 0;
+	border-bottom: 2px solid;
+	box-shadow: none;
+}
