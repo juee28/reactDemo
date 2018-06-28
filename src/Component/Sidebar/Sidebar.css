@@ -1,0 +1,42 @@
+.Sidebar {
+    position: fixed;
+    background: #1b1a1ac9;
+    width: 300px;
+    color: #fff;
+    height: 100%;
+    z-index: 9;
+    top: 0;
+    padding: 10px;
+    transform: translateX(-300px);
+}
+
+.Sidebar ul li{
+   border-bottom: 1px solid #eee;
+}
+
+.Sidebar ul li:hover{
+   color: #61DAFB
+}
+
+.Sidebar ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    line-height: 50px;
+}
+
+.open.Sidebar{
+	  transform: translateX(0px);
+	  transition: all 0.5;
+}
+
+.closeBtn{
+	text-align: right;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+a{
+	display: block;
+	color: #fff
+}
