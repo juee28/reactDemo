@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
+import Input from '../Input/Input';
 import './Login.css';
 
 class Login extends Component {
 
 	constructor(props) {
 		super(props);
+		this.ref = React.createRef();
 		this.state = {
 			user: {
-				password: {
-					value: '',
-					isValid: true,
-					validation: {
-						reqired: true
-					}
-				},
 				name: {
 					value: '',
 					isValid: true,
+					type: 'text',
+					label: 'Username',
+					name: 'name',
+					placeholder: 'Enter Username',
 					validation: {
-						reqired: true
+						required: true
+					}
+				},
+				password: {
+					value: '',
+					isValid: true,
+					type: 'password',
+					label: 'Password',
+					name: 'password',
+					placeholder: 'Enter password',
+					validation: {
+						required: true
 					}
 				}
 			},
@@ -27,12 +37,18 @@ class Login extends Component {
 
 	}
 
-	handleChange(event) {
+	componentDidMount() {
+		if (this.ref.current) {
+			this.ref.current.focus()
+		}
+	}
+
+	handleChange = (event) => {
 		const element = event.target;
 		const name = element.name;
 		const value = (element.value).trim();
 		let isValid = this.validation(name, value);
-		
+
 		this.setState({
 			user: {
 				...this.state.user,
@@ -45,7 +61,7 @@ class Login extends Component {
 		})
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault();
 		let submit = true;
 		for (let element in this.state.user) {
@@ -64,10 +80,10 @@ class Login extends Component {
 		}
 	}
 
-	validation(name, value){
+	validation(name, value) {
 		let isValid = true;
 		const obj = this.state.user[name];
-		if(obj.validation == null){
+		if (obj.validation == null) {
 			return true
 		}
 		if ((value).trim() == '') {
@@ -75,28 +91,23 @@ class Login extends Component {
 		}
 
 		return isValid;
-		
+
 	}
 
 	render() {
+		let user = []
+		for (let element in this.state.user) {
+			user.push(this.state.user[element]);
+		}
 		return (
 			<div className="Login">
-			<h4 className="title">Login</h4>
+				<h4 className="title">Login</h4>
 				<div className='login-page'>
 					<form>
-						<div className="label">
-							<label>Username: <span  className="red">*</span></label>
-							<input type="text" name="name" placeholder="Enter Username" value={this.state.user.name.value}
-								onChange={(e) => this.handleChange(e)}
-								className={this.state.user.name.isValid ? 'form-control' : 'invalid form-control'} />
-						</div>
-						<div className="label">
-							<label>Password: <span className="red">*</span></label>
-							<input type="password" name="password" placeholder="Enter password" value={this.state.user.password.value}
-								onChange={(e) => this.handleChange(e)}
-								className={this.state.user.password.isValid ? 'form-control' : 'invalid form-control'} />
-						</div>
-						<br/>
+						{
+							user.map((user, index) => (<Input iref={index == 0 ? this.ref : null} key={index} element={user} handleChange={(e) => this.handleChange(e)} />))
+						}
+						<br />
 						<button className="btn btn-primary" onClick={(e) => this.handleSubmit(e)}>Login</button>
 					</form>
 				</div>

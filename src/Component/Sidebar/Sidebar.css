@@ -23,6 +23,7 @@
     text-align: left;
     padding: 0;
     line-height: 50px;
+    margin: 10px 0;
 }
 
 .open.Sidebar{
@@ -36,7 +37,12 @@
 	font-size: 25px;
 }
 
-a{
+.Sidebar a{
 	display: block;
 	color: #fff
+}
+
+.Sidebar a:hover{
+    color: #60dbfb;
+    text-decoration: none;
 }

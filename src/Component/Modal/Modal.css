@@ -1,0 +1,38 @@
+.Modal {
+    height: auto;
+    width: 50%;
+    background: #fff;
+    box-shadow: 1px 2px 4px #eee;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 99;
+    border-radius: 5px;
+    padding: 10px;
+    opacity: 1;
+    height: auto;
+}
+
+.overlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #13121240;
+    top: 0;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.hideModal, .hideModal .Modal{
+    opacity: 0;
+    display: none;
+    transform: translate(0 , -100%);
+    transition: opacity 0.1s;
+}
+
+.showModal{
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.1s;
+}

@@ -21,9 +21,24 @@
 
 .userdetail{
 	cursor: default;
-	width: 50%;
-	margin: 10px auto;
 	border: 0;
 	border-bottom: 2px solid;
 	box-shadow: none;
+}
+
+.userdetailcontainer{
+	width: 50%;
+	margin: 10px auto;
+}
+
+.userdetailcontainer .btn{
+	margin-right: 10px
+}
+
+.margin10{
+	margin:10px
+}
+
+.NewUser .label{
+	margin: 10px;
 }
