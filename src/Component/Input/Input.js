@@ -21,7 +21,7 @@ class Input extends Component {
 
                 <input ref={this.props.iref} type={this.props.element.type} name={this.props.element.name} placeholder={this.props.element.placeholder} value={this.props.element.value}
                     onChange={this.props.handleChange}
-                    className={this.props.element.isValid ? 'form-control' : 'invalid form-control'} />
+                    className={this.props.element.isValid ? 'form-control' : 'invalid form-control'} {...this.props}/>
             </div>
         );
     }
